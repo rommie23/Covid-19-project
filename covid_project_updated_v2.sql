@@ -92,14 +92,15 @@ from pop_vs_vac;
 
 
 -- TEMP TABLE--
+drop table if exists percent_population_vaccinated
 CREATE TABLE percent_population_vaccinated
 (
-continent NVARCHAR2,
-location NVARCHAR2,
+continent NVARCHAR2 (255),
+location NVARCHAR2 (255),
 date_1 DATE,
-population NUMERIC,
-new_vaccination NUMERIC,
-counting_vacciantion NUMERIC
+population NUMBER,
+new_vaccination NUMBER,
+counting_vacciantion NUMBER
 )
 insert into percent_population_vaccinated
 select dea.continent, dea.location, dea.date_1, dea.population, vac.new_vaccinations
